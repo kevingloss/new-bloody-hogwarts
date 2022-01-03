@@ -16,11 +16,17 @@ RSpec.describe "Students Index Page" do
       expect(page).to have_content(@harry.age)
       expect(page).to have_content(@harry.house)
     end
-    
+
     within("#student-#{@draco.id}") do
       expect(page).to have_content(@draco.name)
       expect(page).to have_content(@draco.age)
       expect(page).to have_content(@draco.house)
     end
+  end
+
+  it 'shows the average age of the students' do
+    visit "/students"
+    
+    expect(page).to have_content("Average Age: 13.5")
   end
 end
