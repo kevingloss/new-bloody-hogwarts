@@ -16,7 +16,7 @@ RSpec.describe "Students Index Page" do
       expect(page).to have_content(@harry.age)
       expect(page).to have_content(@harry.house)
     end
-
+    
     within("#student-#{@draco.id}") do
       expect(page).to have_content(@draco.name)
       expect(page).to have_content(@draco.age)
